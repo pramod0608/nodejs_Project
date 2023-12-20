@@ -4,9 +4,6 @@ FROM node:latest
 # Set working directory
 WORKDIR /app
 
-# Install dependencies
-RUN npm install
-
 # Copy the rest of the app's source code
 COPY . .
 
