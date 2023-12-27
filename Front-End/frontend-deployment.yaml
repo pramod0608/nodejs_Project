@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: frontendDeployment
+metadata:
+  name: nodejs-deployment
+  labels:
+    app: nodejs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodejs
+  template:
+    metadata:
+      labels:
+        app: nodejs
+    spec:
+      containers:
+      - name: nodejs_container
+        image: pramodmedi/nodeimage:tagname
+        ports:
+        - containerPort: 80
